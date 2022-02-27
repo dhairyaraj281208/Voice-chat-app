@@ -45,7 +45,12 @@ function addVideoStream(video, stream) {
     video.srcObject = stream;
     video.addEventListener("loadedmetadata", () => {
         video.play();
-        $("#users").append(video)
+        let html = `
+            <div class="user-container">
+                ${video.outerHTML}
+            </div>
+        `
+        $("#users").append(html)
     });
 };
 
