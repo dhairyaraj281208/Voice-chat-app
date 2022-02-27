@@ -20,7 +20,7 @@ navigator.mediaDevices
         myStream = stream;
         addVideoStream(myVideo, stream);
 
-        socket.on("user-Connected", (userId) => {
+        socket.on("user-connected", (userId) => {
             connectToNewUser(userId, stream);
         });
 
@@ -72,5 +72,5 @@ $(function () {
 })
 
 peer.on("open", (id) => {
-    socket.emit("join-room", ROOM_ID, id, user);
+    socket.emit("join-room", ROOM_ID, id);
 });
